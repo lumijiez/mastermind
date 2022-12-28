@@ -280,6 +280,10 @@ public class MEvents implements Initializable {
         str_color_string_reverse.put("X", 5);
     }
     public void startNew() {
+        tcirc1.setFill(Color.web("#e2ecf5"));
+        tcirc2.setFill(Color.web("#e2ecf5"));
+        tcirc3.setFill(Color.web("#e2ecf5"));
+        tcirc4.setFill(Color.web("#e2ecf5"));
         counter = 1;
         currentPos1 = -1;
         currentPos2 = -1;
@@ -737,6 +741,10 @@ public class MEvents implements Initializable {
             }
         } else if (counter >= 8) {
             counter = -1;
+            tcirc1.setFill(Color.web("#e2ecf5"));
+            tcirc2.setFill(Color.web("#e2ecf5"));
+            tcirc3.setFill(Color.web("#e2ecf5"));
+            tcirc4.setFill(Color.web("#e2ecf5"));
             loses++;
             sm11.setOpacity(0);
             sm12.setOpacity(0);
@@ -922,6 +930,10 @@ public class MEvents implements Initializable {
         if (count == 4) {
             maintext.setTextFill(Color.GREEN);
             wins++;
+            tcirc1.setFill(Color.web("#e2ecf5"));
+            tcirc2.setFill(Color.web("#e2ecf5"));
+            tcirc3.setFill(Color.web("#e2ecf5"));
+            tcirc4.setFill(Color.web("#e2ecf5"));
             row1.setOpacity(0);
             row2.setOpacity(0);
             row3.setOpacity(0);
