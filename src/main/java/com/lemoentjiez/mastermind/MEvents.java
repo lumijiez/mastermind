@@ -279,6 +279,18 @@ public class MEvents implements Initializable {
         str_color_string_reverse.put("Z", 4);
         str_color_string_reverse.put("X", 5);
     }
+
+    public static HashMap<Character, String> str_color_names;
+    static {
+        str_color_names = new HashMap<>();
+        str_color_names.put('W', "WHITE");
+        str_color_names.put('Y', "YELLOW");
+        str_color_names.put('B', "BLUE");
+        str_color_names.put('R', "RED");
+        str_color_names.put('G', "GREEN");
+        str_color_names.put('Z', "BLACK");
+        str_color_names.put('X', "BROWN");
+    }
     public void startNew() {
         tcirc1.setFill(Color.web("#e2ecf5"));
         tcirc2.setFill(Color.web("#e2ecf5"));
@@ -440,7 +452,12 @@ public class MEvents implements Initializable {
         circ84.setFill(Color.web("#e2ecf5"));
     }
     public void cheat() {
-        maintext.setText(SEQ);
+        String cheatCode = "";
+        for (int i = 0; i < SEQ.length(); i++) {
+            cheatCode += str_color_names.get(SEQ.charAt(i)) + " ";
+        }
+        maintext.setText(cheatCode);
+        maintext.setTextFill(Color.AQUAMARINE);
     }
     public void enter() {
         winsl.setText("Wins: " + wins);
@@ -829,25 +846,21 @@ public class MEvents implements Initializable {
             currentPos1++;
             if (currentPos1 > 5) currentPos1 = 0;
             tcirc1.setFill(str_color_index.get(currentPos1));
-            System.out.println(currentPos1);
         });
         tcirc2.setOnMouseClicked(event -> {
             currentPos2++;
             if (currentPos2 > 5) currentPos2 = 0;
             tcirc2.setFill(str_color_index.get(currentPos2));
-            System.out.println(currentPos2);
         });
         tcirc3.setOnMouseClicked(event -> {
             currentPos3++;
             if (currentPos3 > 5) currentPos3 = 0;
             tcirc3.setFill(str_color_index.get(currentPos3));
-            System.out.println(currentPos3);
         });
         tcirc4.setOnMouseClicked(event -> {
             currentPos4++;
             if (currentPos4 > 5) currentPos4 = 0;
             tcirc4.setFill(str_color_index.get(currentPos4));
-            System.out.println(currentPos4);
         });
         maintext.setTextFill(Color.AQUAMARINE);
         maintext.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
